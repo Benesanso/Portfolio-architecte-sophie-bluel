@@ -18,8 +18,8 @@
     //     console.log(err)
     // })
     
-// On créé le template pour un objet. On passe en paramètre un seul objet et la fonction nous retourne le HTML pour cet objet
-function templateHTML(elt) {
+// On passe en paramètre un seul objet et la fonction nous retourne le HTML pour cet objet
+function addOneWorkToGallery(elt) {
     const figure = document.createElement('figure');// On créé la figure
     const img = document.createElement('img');// On créé l'image
     img.src =  elt.imageUrl;// On lie le lien vers l'image à son attribut src
@@ -111,13 +111,13 @@ function displayWorks (category){
         // Si Elément est 0 tous les travaux s'affichent
         if (category == 0){
           data.forEach(function(item){
-            let produit = templateHTML(item)
+            let produit = addOneWorkToGallery(item)
             gallery.appendChild(produit);
         })//Sinon filtrage par id par catégorie
         } else{
         let filteredWorks = data.filter(work => work.category.id == category) 
         filteredWorks.forEach(function(item){
-          let produit = templateHTML(item)
+          let produit = addOneWorkToGallery(item)
           gallery.appendChild(produit);      
       }) 
     }
