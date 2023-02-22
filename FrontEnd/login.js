@@ -42,15 +42,4 @@ fetch('http://localhost:5678/api/users/login', {
   });
 });
 
-//affichage de la banière et des boutons modifier
-document.addEventListener('DOMContentLoaded', function() {
-  const token = localStorage.setItem('token', data.token);
-  // Vérifier si l'utilisateur est connecté
-  if (token) {
-    // L'utilisateur est connecté, afficher le contenu de #banner
-    document.getElementById('banner').style.display = 'block';
-  } else {
-    // L'utilisateur n'est pas connecté, cacher le contenu de #banner
-    document.getElementById('banner').style.display = 'none';
-  }
-});
+

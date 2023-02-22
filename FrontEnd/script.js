@@ -165,4 +165,21 @@ logoutLink.addEventListener('click', (event) => {
 });
 
 
+//Apparition de Homepage_edit
+const token = localStorage.getItem('token');
+;
+if (token) {
+  // L'utilisateur est connecté, afficher le contenu de #banner et les boutons
+  document.getElementById('banner').style.display = 'block';
+  document.getElementById('modifie').style.display = 'block';
+  document.getElementById('modif').style.display = 'block';
+  document.getElementById('change').style.display = 'block';
+} else {
+  // L'utilisateur n'est pas connecté, cacher le contenu de #banner et les boutons
+  document.getElementById('banner').style.display = 'none';
+  document.getElementById('modifie').style.display = 'none';
+  document.getElementById('modif').style.display = 'none';
+  document.getElementById('change').style.display = 'none';
+}
+
 

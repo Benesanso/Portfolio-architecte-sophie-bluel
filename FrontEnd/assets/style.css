@@ -313,7 +313,7 @@ li.active {
 	margin-right:50%;
 	margin-left:50%; 
 	transform: translate(-50%, -50%);
-	display: none;/*apparait  lors de la connexion sur la page */
+	
   }
   
 .rectangle {
@@ -367,7 +367,7 @@ li.active {
 	flex-direction: row;
 	gap: 10px;
 	margin:20px 0px 0px 58px;
-	display: none;/*apparait  lors de la connexion sur la page */
+	
 }
 
 .title{
@@ -382,7 +382,7 @@ li.active {
 	flex-direction: row;
 	gap: 10px;
 	margin-top: 10px;
-	display: none;/* apparait  lors de la connexion sur la page */
+	
 }
 .modif{
 	margin-bottom: 40px;
