@@ -9,16 +9,31 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-
+	<script src="https://kit.fontawesome.com/7975d58b0a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+	
+	<div id="banner">
+		<div class="rectangle">
+		  <p>publier les changements</p>
+		</div>
+		<div class="edit">
+			<button>
+				<i class="fa-regular fa-pen-to-square"></i>
+				Mode édition
+			</button>
+		</div>
+	</div>
+	  
 <header>
+
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li><a href="index.html">projets</a></li>
 			<li><a href="#">contact</a></li>
-			<li><a href="login.html">login</a></li>
+			<li class="active"><a href="login.html">login</a></li>
+			<li><a class= "hidden logout" href="login.html">logout</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -27,8 +42,20 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<div>
+				<button class="modif">
+					<i class="fa-regular fa-pen-to-square"></i>
+					modifier
+				</button>
+			</div>
 		</figure>
 		<article>
+			<div id="modifie">
+				<button class="modifie">
+					<i class="fa-regular fa-pen-to-square"></i>
+					modifier
+				</button>
+			</div>
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -37,7 +64,15 @@
 	</section>
 
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="title">
+			<h2>Mes Projets</h2>
+			<div id="change">
+				<button class="modif">
+					<i class="fa-regular fa-pen-to-square"></i>
+					modifier
+				</button>
+			</div>
+		</div>	
 		<div id= "filters"></div><!--création des filtres par catégories-->
 		<div class="gallery"></div>
 	</section>
@@ -59,6 +94,6 @@
 
 <footer></footer>
 
-<script  type="module" src="script.js"></script>
+<script id="script-module" type="module" src="script.js"></script>
 </body>
 </html>

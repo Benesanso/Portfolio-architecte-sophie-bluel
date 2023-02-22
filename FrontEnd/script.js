@@ -137,3 +137,32 @@ footer.appendChild(nav);
 
 document.body.appendChild(footer);
 
+// Vérifier si l'utilisateur est connecté
+if (localStorage.getItem('token')) {
+  // Afficher le lien de déconnexion
+  const logoutLink = document.querySelector('.logout');
+  logoutLink.classList.remove('hidden');
+  
+  // Masquer le lien de connexion
+  const loginLink = document.querySelector('.active');
+  loginLink.classList.add('hidden');
+}
+
+
+// Récupérer l'élément HTML pour le lien de déconnexion
+const logoutLink = document.querySelector('.logout');
+
+// Ajouter un écouteur d'événement au lien de déconnexion
+logoutLink.addEventListener('click', (event) => {
+  // Empêcher le lien de se comporter comme un lien normal
+  event.preventDefault();
+
+  // Supprimer le jeton de connexion du stockage local
+  localStorage.removeItem('token');
+
+  // Rediriger vers la page de connexion
+  window.location.href = "login.html";
+});
+
+
+

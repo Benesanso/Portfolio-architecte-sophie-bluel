@@ -56,7 +56,7 @@ table {
 body {
 	max-width: 1140px;
 	margin:auto;
-	font-family: 'Work Sans' ;
+	font-family: Work Sans;
 	font-size: 14px;
 }
 
@@ -141,7 +141,7 @@ li:active{
 }
 
 #introduction article {
-	flex: 1
+	flex: 1;
 }
 
 #introduction h2 {
@@ -278,6 +278,7 @@ footer nav ul li{
 	height: 50px;
 	width: 100%;
 	margin-bottom: 20px;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 #login input[type="submit"]{
@@ -295,4 +296,122 @@ footer nav ul li{
 li.active {
 	font-weight: 600;
 }
+
+#connect-btn {
+	cursor: pointer;
+  }
+  
+/*homepage-edit*/
+#banner {
+	background-color: black;
+	width: 1400px;
+	height: 59px;
+	background-color: black;
+	width: 1440px;
+	height: 90px;
+	position: relative;
+	margin-right:50%;
+	margin-left:50%; 
+	transform: translate(-50%, -50%);
+	display: none;/*apparait  lors de la connexion sur la page */
+  }
+  
+.rectangle {
+	background-color: white;
+	width: 12%;
+	height: 25px;
+	border-radius: 60px;
+	position: absolute;
+	top:75%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+  }
+  
+.rectangle p{
+	font-family: Work Sans;
+	font-weight: 500;
+	line-height: 16px;
+	font-size: 12px;
+	text-align: center;
+	color: black;
+	margin-top: 4px;
+  }
+
+.edit{
+	position: absolute;
+	top: 65%;
+	left: 45%;
+	transform: translate(-50, -50%);
+	display: flex;
+	gap: 10px;
+}
+
+.edit i {
+	color: white;
+	margin-top: 3px;
+	font-size: 12px;
+}
+
+.edit button{
+	font-family: Work Sans;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 12px;
+	line-height: 19px;
+	color: white;
+	margin: 0;
+}
+
+#introduction div{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	margin:20px 0px 0px 58px;
+	display: none;/*apparait  lors de la connexion sur la page */
+}
+
+.title{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 20px;
+}
+
+#change{
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	margin-top: 10px;
+	display: none;/* apparait  lors de la connexion sur la page */
+}
+.modif{
+	margin-bottom: 40px;
+}
+#introduction #modifie{
+	margin: 0px 0px 40px 0px;
+}
+button{
+	border: none;
+	background:none;
+	color: none;
+	text-decoration: none;
+	box-shadow: none;
+	padding: 0px;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+/* Afficher l'élément div si la classe hidden est supprimée */
+.hidden:not(.hidden) {
+	display: block;
+}
+
+#erreur {
+  display: none;
+  color: red;
+}
+  
   

@@ -20,6 +20,7 @@
 			<li><a href="index.html">projets</a></li>
 			<li><a href="#">contact</a></li>
 			<li class="active"><a href="login.html">login</a></li>
+			<li><a class= "hidden logout" href="login.html">logout</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -28,19 +29,22 @@
 <main>
     <section id="login">
 		<h2>Log In</h2>
-		<form action="#" method="post">
+		<span id="erreur">Les informations de connexion sont incorrectes</span>
+		<form id="login-form" method="post" action="http://localhost:5678/api/users/login">
 			<label for="email">Email</label>
-			<input type="email" name="email" id="email">
+			<input type="email" name="email" id="email" value="">
 			<label for="password">Mot de passe</label>
-			<input type="password" name="password" id="password">
-			<input type="submit" value="Se connecter">
+			<input type="password" name="password" id="password" value="">
+			<input type="submit" value="Se connecter" id="connect-btn">
 			<a href="#">Mot de passe oublié</a>
 		</form>
+		<div id="login-messages"></div>Les informations de connexion sont incorrectes</div>
 	</section>
 </main>
 
 <footer></footer>
 
-<script  type="module" src="script.js"></script>
+<script  type="module" src="login.js"></script>
+
 </body>
 </html>
