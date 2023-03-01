@@ -66,13 +66,28 @@
 	<section id="portfolio">
 		<div class="title">
 			<h2>Mes Projets</h2>
-			<div id="change">
-				<button class="modif">
-					<i class="fa-regular fa-pen-to-square"></i>
-					modifier
-				</button>
-			</div>
+			<!-- Bouton -->
+				<div id="change">
+					<button class="change">
+	  					<i class="fa-regular fa-pen-to-square"></i>
+	  					modifier
+					</button>
+  				</div>
+  			<!-- Modale -->
+			  	<div id="myModal" class="modal">
+				<!-- Contenu de la modale -->
+					<div class="modal-content">
+						<div class="inmodal">
+				  			<span class="close">&times;</span>
+							<h3>Galerie photo</h3>
+						</div>
+						<figure class="modalpicture"></figure>
+						<a href="#" class="addpicture">Ajouter une photo</a><br>
+						<a href="#" class="delete">Supprimer la Galerie</a>
+					</div>
+		 	 	</div>
 		</div>	
+
 		<div id= "filters"></div><!--création des filtres par catégories-->
 		<div class="gallery"></div>
 	</section>
@@ -95,6 +110,6 @@
 <footer></footer>
 
 <script id="script-module" type="module" src="script.js"></script>
-
+<script id="modal" src="modal.js"></script>
 </body>
 </html>

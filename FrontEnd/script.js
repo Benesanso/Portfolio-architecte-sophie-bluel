@@ -101,6 +101,8 @@ button.addEventListener("click", function () {
   filters.appendChild(button); 
 }
 
+
+
 //Récupération des travaux 
 function displayWorks (category){
     fetch ("http://localhost:5678/api/works")
@@ -181,5 +183,3 @@ if (token) {
   document.getElementById('modif').style.display = 'none';
   document.getElementById('change').style.display = 'none';
 }
-
-
