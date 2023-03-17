@@ -360,3 +360,29 @@ validerBtn.addEventListener('click', function() {
 
   }
 });
+
+//FONCTION DELETE 
+const icon = document.createElement('span'); 
+const deleteImage = (id,figure) => {
+  const token = localStorage.getItem('token');
+  const headers = new Headers();
+  headers.append('Authorization', 'Bearer ' + token);
+
+  fetch(`http://localhost:5678/api/works/${id}`, {
+    method: 'DELETE',
+    headers: headers,
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log("Réponse de l'API:", data);
+    // Supprimer l'image du DOM
+    
+  const gallery = document.querySelector('#gallery');
+  gallery.removeChild(figure);
+  })
+}
+// Ajouter l'événement de clic à l'icône de suppression
+icon.addEventListener('click', () => {
+  const id = 3; // Remplacez l'ID de l'image à supprimer
+  deleteImage(id);
+});
