@@ -30,6 +30,7 @@ function addOneWorkToGallery(elt) {
     figure.appendChild(img);// On met l'image dans la figure
     figure.appendChild(figCaption);// On met le figcaption dans la figure
     return figure; // et on retourne le HTML de la figure
+    
 }
   
 function removeAllChildNodes(parent) {
@@ -49,9 +50,9 @@ fetch("http://localhost:5678/api/categories")
        createButton(name, id)
     });
 })
-    .catch(err => {
-      console.log("dans le catch")
-      console.log(err)
+  .catch(err => {
+    console.log("dans le catch")
+    console.log(err)
     });
 
 //Création boutton
@@ -100,8 +101,6 @@ button.addEventListener("click", function () {
   const filters = document.querySelector("#filters"); 
   filters.appendChild(button); 
 }
-
-
 
 //Récupération des travaux 
 function displayWorks (category){
@@ -169,7 +168,7 @@ logoutLink.addEventListener('click', (event) => {
 
 //Apparition de Homepage_edit
 const token = localStorage.getItem('token');
-;
+
 if (token) {
   // L'utilisateur est connecté, afficher le contenu de #banner et les boutons
   document.getElementById('banner').style.display = 'block';

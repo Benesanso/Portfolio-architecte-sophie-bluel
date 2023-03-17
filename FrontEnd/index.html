@@ -73,23 +73,10 @@
 	  					modifier
 					</button>
   				</div>
-  			<!-- Modale -->
-			  	<div id="myModal" class="modal">
-				<!-- Contenu de la modale -->
-					<div class="modal-content">
-						<div class="inmodal">
-				  			<span class="close">&times;</span>
-							<h3>Galerie photo</h3>
-						</div>
-						<figure class="modalpicture"></figure>
-						<a href="#" class="addpicture">Ajouter une photo</a><br>
-						<a href="#" class="delete">Supprimer la Galerie</a>
-					</div>
-		 	 	</div>
-		</div>	
+		</div>
 
 		<div id= "filters"></div><!--création des filtres par catégories-->
-		<div class="gallery"></div>
+		<div class="gallery"></div><!-- Section pour afficher les photos ajoutées -->
 	</section>
 	
 	<section id="contact">
@@ -108,7 +95,16 @@
 </main>
 
 <footer></footer>
-
+<!--Modal-->
+<div id="myModal" class="modal">
+	<div class="modal-content" id="modal-content">
+	<div class="modal-header" id="modal-header">
+		<span class="close">&times;</span>
+	</div>
+	<div class="modal-body" id="modal-body"></div>
+	<div class="modal-footer" id="modal-footer"></div>
+	</div>
+</div>
 <script id="script-module" type="module" src="script.js"></script>
 <script id="modal" src="modal.js"></script>
 </body>
