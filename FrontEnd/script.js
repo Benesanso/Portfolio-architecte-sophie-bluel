@@ -29,8 +29,7 @@ function addOneWorkToGallery(elt) {
     figCaption.innerText = elt.title;// On lie le texte avec le figcaption
     figure.appendChild(img);// On met l'image dans la figure
     figure.appendChild(figCaption);// On met le figcaption dans la figure
-    return figure; // et on retourne le HTML de la figure
-    
+    return figure; // et on retourne le HTML de la figure 
 }
   
 function removeAllChildNodes(parent) {
@@ -45,14 +44,14 @@ fetch("http://localhost:5678/api/categories")
   .then(data => { 
    createButton ("Tous", 0);
     data.forEach(category => {
-        const { id, name } = category
-        console.log(id);
-       createButton(name, id)
+        const { id, name } = category;
+     
+       createButton(name, id);
     });
 })
   .catch(err => {
-    console.log("dans le catch")
-    console.log(err)
+    console.log("dans le catch");
+    console.log(err);
     });
 
 //Création boutton
@@ -107,22 +106,22 @@ function displayWorks (category){
     fetch ("http://localhost:5678/api/works")
     .then(res => res.json())
     .then(data => {
-      const gallery = document.querySelector(".gallery")
-      removeAllChildNodes(gallery)//supprimer tous les nœuds enfants
+      const gallery = document.querySelector(".gallery");
+      removeAllChildNodes(gallery);//supprimer tous les nœuds enfants
         // Si Elément est 0 tous les travaux s'affichent
         if (category == 0){
           data.forEach(function(item){
-            let produit = addOneWorkToGallery(item)
+            let produit = addOneWorkToGallery(item);
             gallery.appendChild(produit);
-        })//Sinon filtrage par id par catégorie
+        });//Sinon filtrage par id par catégorie
         } else{
-        let filteredWorks = data.filter(work => work.category.id == category) 
+        let filteredWorks = data.filter(work => work.category.id == category); 
         filteredWorks.forEach(function(item){
-          let produit = addOneWorkToGallery(item)
+          let produit = addOneWorkToGallery(item);
           gallery.appendChild(produit);      
-      }) 
+      }); 
     }
-}) 
+}); 
 }
    
 // Création de mon footer
