@@ -50,7 +50,6 @@ const button = document.createElement("button");
 
 // Ajouter un événement click sur le bouton "modifier" pour afficher la modale
 btn.addEventListener("click", () => {
-  console.log(btn);
   modal.style.display = "block";
   displayWorksInModal(); // Appeler la fonction pour afficher les travaux dans la modale
   validerBtn.style.display = 'none';
@@ -191,6 +190,7 @@ ajouterBtn.addEventListener('click', function() {
   validerBtn.style.display = 'block'; // Afficher le bouton "Valider"
   photo.style.display = "none";
 });
+
 // Sélectionner la modal-body pour  Ajouter un écouteur d'événements sur le bouton
 ajouterBtn.addEventListener('click', () => {
   // Sélectionner la modal-body pour le formulaire
@@ -335,19 +335,28 @@ input.addEventListener("change", () => {
 //AJOUT image  VIA LE FORMULAIRE 
 validerBtn.addEventListener('click', function() {
   // Récupération de l'élément input contenant le fichier sélectionné
-
   const input = document.querySelector('input[type="file"]');
 
   const title = document.querySelector('#text').value;
-
+  
   const category = document.querySelector('#choix').value;
+
+ // Créer dynamiquement l'élément "div" pour afficher le message d'erreur
+ const errorMessage = document.createElement('div');
+ errorMessage.classList.add('error-message'); // Ajouter une classe pour styliser l'élément
 
   const photo = document.querySelector('#photo-upload').files[0];
   if (!title || !category || !photo) {
     // Afficher un message d'erreur si le formulaire n'est pas correctement rempli
-    alert('Veuillez remplir tous les champs du formulaire.');
+    errorMessage.innerText = 'Veuillez remplir tous les champs du formulaire.';
+    validerBtn.parentNode.insertBefore(errorMessage, validerBtn);
+    // Supprimer l'élément d'erreur au bout de 4 secondes
+    setTimeout(function() {
+      errorMessage.remove();
+    }, 4000);
     return;
   }
+  
   // Récupération du contenu de l'image
   const file = input.files[0];
 
@@ -384,10 +393,9 @@ validerBtn.addEventListener('click', function() {
       
       // Ajouter l'image à la modal
       addOneWorkToModal(data);
+
       // Afficher la réponse de l'API si le formulaire est correctement envoyé
       console.log(data);
-      // Recharger la page pour afficher le nouveau projet dans la galerie
-      location.reload();
     })
   }
 });
