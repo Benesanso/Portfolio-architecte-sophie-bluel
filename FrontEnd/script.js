@@ -1,23 +1,3 @@
-//Recupération de l'élément dans le document grâce au sélecteur
-//document.querySelector(".gallery");
-
-//Récupération de l'api et des données
-//fetch("http://localhost:5678/api/works")
-   // .then(res => res.json())
-    // /.then(data => {
-    //     console.log(data)
-    //     data.forEach(function(item){
-    //         let produit = templateHTML(item)
-    //         document.querySelector(".gallery").appendChild(produit);
-          
-    //     })
-    // })
-
-    // .catch(err => {
-    //     console.log("dans le catch")
-    //     console.log(err)
-    // })
-    
 // On passe en paramètre un seul objet et la fonction nous retourne le HTML pour cet objet
 function addOneWorkToGallery(elt) {
     const figure = document.createElement('figure');// On créé la figure
@@ -38,7 +18,7 @@ function removeAllChildNodes(parent) {
 }
 }
 
-// Récupération les catégories via l'API
+// Récupération des catégories via l'API
 fetch("http://localhost:5678/api/categories")
   .then(res => res.json())
   .then(data => { 
@@ -136,6 +116,7 @@ nav.appendChild(ul);
 footer.appendChild(nav);
 
 document.body.appendChild(footer);
+
 
 // Vérifier si l'utilisateur est connecté
 if (localStorage.getItem('token')) {

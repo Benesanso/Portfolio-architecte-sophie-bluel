@@ -333,7 +333,8 @@ input.addEventListener("change", () => {
 });
 
 //AJOUT image  VIA LE FORMULAIRE 
-validerBtn.addEventListener('click', function() {
+validerBtn.addEventListener('click', function(e) {
+  e.preventDefault();
   // Récupération de l'élément input contenant le fichier sélectionné
   const input = document.querySelector('input[type="file"]');
 
@@ -426,7 +427,8 @@ const deleteImage = (id, figure) => {
 };
 
 // Ajouter l'événement de clic à l'icône de suppression
-icon.addEventListener('click', () => {
+icon.addEventListener('click', (e) => {
+  e.preventDefault();
   const id = 3; // Remplacez l'ID de l'image à supprimer
   deleteImage(id, figure);
 });

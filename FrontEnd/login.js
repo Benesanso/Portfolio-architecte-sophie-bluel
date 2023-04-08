@@ -25,7 +25,7 @@ fetch('http://localhost:5678/api/users/login', {
       return response.json();
     } else {
     // La combinaison email / password est incorrecte
-      throw new Error('Les informations de connexion sont incorrectes');
+      throw new Error('Erreur dans l’identifiant ou le mot de passe');
     }
   })
   .then(data => {
@@ -41,4 +41,8 @@ fetch('http://localhost:5678/api/users/login', {
     errorMessage.textContent = error.message;
   });
 });
+
+
+
+
 
