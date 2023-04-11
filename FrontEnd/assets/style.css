@@ -292,7 +292,11 @@ footer nav ul li{
 	margin-bottom: 400px;
 }
 
-nav li.active a{
+nav li a.inactive{
+	font-weight: 400;
+}
+
+nav li a.active{
 	font-weight: 600;
 }
 

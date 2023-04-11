@@ -42,7 +42,11 @@ fetch('http://localhost:5678/api/users/login', {
   });
 });
 
+const loginLink = document.querySelector('a[href="login.html"]');
 
-
-
-
+loginLink.addEventListener('click', () => {
+  // Ajouter la classe active
+  loginLink.classList.add('active');
+  // Supprimer la classe inactive
+  loginLink.classList.remove('inactive');
+});
